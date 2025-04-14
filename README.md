@@ -1,3 +1,76 @@
+# School Management System
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
+
+## Backend Setup
+
+1. Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the backend directory with:
+
+```
+PORT=5000
+MONGO_URL=mongodb://localhost:27017/school
+JWT_SECRET=your-secret-key-here
+```
+
+4. Start the backend server:
+
+```bash
+npm start
+```
+
+## Frontend Setup
+
+1. Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the frontend directory with:
+
+```
+REACT_APP_BASE_URL=http://localhost:5000
+```
+
+4. Start the frontend development server:
+
+```bash
+npm start
+```
+
+## Accessing the Application
+
+- Frontend will run on: http://localhost:3000
+- Backend API will run on: http://localhost:5000
+
+## Important Notes
+
+1. Make sure MongoDB is running before starting the backend
+2. Start the backend server before the frontend
+3. For first-time users, start by creating an admin account through registration
+
 <h1 align="center">
     SCHOOL MANAGEMENT SYSTEM
 </h1>
@@ -44,9 +117,11 @@ The School Management System is a web-based application built using the MERN (Mo
 ```sh
 git clone https://github.com/Yogndrr/MERN-School-Management-System.git
 ```
+
 Open 2 terminals in separate windows/tabs.
 
-Terminal 1: Setting Up Backend 
+Terminal 1: Setting Up Backend
+
 ```sh
 cd backend
 npm install
@@ -59,17 +134,21 @@ Inside it write this :
 ```sh
 MONGO_URL = mongodb://127.0.0.1/school
 ```
+
 If you are using MongoDB Compass you can use this database link but if you are using MongoDB Atlas then instead of this link write your own database link.
 
 Terminal 2: Setting Up Frontend
+
 ```sh
 cd frontend
 npm install
 npm start
 ```
-Now, navigate to `localhost:3000` in your browser. 
+
+Now, navigate to `localhost:3000` in your browser.
 The Backend API will be running at `localhost:5000`.
 <br>
+
 # Error Solution
 
 You might encounter an error while signing up, either a network error or a loading error that goes on indefinitely.
@@ -79,6 +158,7 @@ To resolve it:
 1. Navigate to the `frontend > .env` file.
 
 2. Uncomment the first line. After that, terminate the frontend terminal. Open a new terminal and execute the following commands:
+
 ```sh
 cd frontend
 npm start
@@ -105,7 +185,7 @@ The issue arises because the `.env` file in the frontend may not work for all us
 Additionally:
 
 - When testing the project, start by signing up rather than logging in as a guest or using regular login if you haven't created an account yet.
-  
+
   To use guest mode, navigate to `LoginPage.js` and provide an email and password from a project already created in the system. This simplifies the login process, and after creating your account, you can use your credentials.
 
 These steps should resolve the network error in the frontend. If the issue persists, feel free to contact me for further assistance.
@@ -139,9 +219,9 @@ When attempting to delete items, you may encounter a popup message stating, "Sor
 
 ```javascript
 export const deleteUser = (id, address) => async (dispatch) => {
-    dispatch(getRequest());
-    dispatch(getFailed("Sorry the delete function has been disabled for now."));
-}
+  dispatch(getRequest());
+  dispatch(getFailed("Sorry the delete function has been disabled for now."));
+};
 ```
 
 4. If you have previously modified the code, you may find the `deleteUser` functions at different lines. In this case, uncomment the original code and comment out the current one.
@@ -149,7 +229,7 @@ export const deleteUser = (id, address) => async (dispatch) => {
 5. Next, navigate to the `frontend > src > pages > admin` folder. Here, you will find different folders suffixed with "Related". Open each folder and locate files prefixed with "Show".
 
 6. Open each file with "Show" as a prefix and search for a function named `deleteHandler`. For example:
-   
+
 ```javascript
 const deleteHandler = (deleteID, address) => {
   console.log(deleteID);
@@ -160,7 +240,7 @@ const deleteHandler = (deleteID, address) => {
   //   .then(() => {
   //     dispatch(getAllSclasses(adminID, "Sclass"));
   //   })
-}
+};
 ```
 
 7. This is an example snippet from `ShowClasses`. In other files with "Show" as a prefix, it may differ.
@@ -173,11 +253,10 @@ const deleteHandler = (deleteID, address) => {
   // console.log(address);
   // setMessage("Sorry, the delete function has been disabled for now.");
   // setShowPopup(true);
-  dispatch(deleteUser(deleteID, address))
-    .then(() => {
-      dispatch(getAllSclasses(adminID, "Sclass"));
-    })
-}
+  dispatch(deleteUser(deleteID, address)).then(() => {
+    dispatch(getAllSclasses(adminID, "Sclass"));
+  });
+};
 ```
 
 9. Repeat these steps for every other file. In some cases, the `deleteHandler` function may also be found in files prefixed with "View". Check those files and repeat the same process.
@@ -187,6 +266,6 @@ If the issue persists, feel free to contact me for further assistance.
 Don't forget to leave a star for this project if you found the solution helpful. Thank you!
 
 # Deployment
-* Render - server side
-* Netlify - client side
 
+- Render - server side
+- Netlify - client side
