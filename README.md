@@ -1,9 +1,92 @@
+# School Management System
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB
+- npm or yarn
+
+## Backend Setup
+
+1. Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the backend directory with:
+
+```
+PORT=5000
+MONGO_URL=mongodb://localhost:27017/school
+JWT_SECRET=your-secret-key-here
+```
+
+4. Start the backend server:
+
+```bash
+npm start
+```
+
+## Frontend Setup
+
+1. Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the frontend directory with:
+
+```
+REACT_APP_BASE_URL=http://localhost:5000
+```
+
+4. Start the frontend development server:
+
+```bash
+npm start
+```
+
+## Accessing the Application
+
+- Frontend will run on: http://localhost:3000
+- Backend API will run on: http://localhost:5000
+
+## Important Notes
+
+1. Make sure MongoDB is running before starting the backend
+2. Start the backend server before the frontend
+3. For first-time users, start by creating an admin account through registration
+
 <h1 align="center">
     SCHOOL MANAGEMENT SYSTEM
 </h1>
 
+<h3 align="center">
+Streamline school management, class organization, and add students and faculty.<br>
+Seamlessly track attendance, assess performance, and provide feedback. <br>
+Access records, view marks, and communicate effortlessly.
+</h3>
 
+<br>
+[Youtube Video](https://youtu.be/ol650KwQkgY?si=rKcboqSv3n-e4UbC)
+<br><br>
+[LinkedIn](https://www.linkedin.com/in/yogndr/)
 
+# About
 
 The School Management System is a web-based application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It aims to streamline school management, class organization, and facilitate communication between students, teachers, and administrators.
 
@@ -29,7 +112,16 @@ The School Management System is a web-based application built using the MERN (Mo
 
 <br>
 
+# Installation
 
+```sh
+git clone https://github.com/Yogndrr/MERN-School-Management-System.git
+```
+
+Open 2 terminals in separate windows/tabs.
+
+Terminal 1: Setting Up Backend 
+```sh
 cd backend
 npm install
 npm start
@@ -41,6 +133,7 @@ Inside it write this :
 ```sh
 MONGO_URL = mongodb://127.0.0.1/school
 ```
+
 If you are using MongoDB Compass you can use this database link but if you are using MongoDB Atlas then instead of this link write your own database link.
 
 Terminal 2: Setting Up Frontend
@@ -49,9 +142,11 @@ cd frontend
 npm install
 npm start
 ```
+
 Now, navigate to `localhost:3000` in your browser. 
 The Backend API will be running at `localhost:5000`.
 <br>
+
 # Error Solution
 
 You might encounter an error while signing up, either a network error or a loading error that goes on indefinitely.
@@ -171,4 +266,3 @@ Don't forget to leave a star for this project if you found the solution helpful.
 # Deployment
 * Render - server side
 * Netlify - client side
-
